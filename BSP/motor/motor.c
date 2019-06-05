@@ -97,7 +97,6 @@ void motor_init(void)
 {
     MOTOR_GPIO_Config();
     PWM_GPIO_Config();
-    /* ²»·ÖÆµ£¬10K ÆµÂÊ f = F/C = 72M/7200 */
-    PWM_Mode_Config(7199, 0);
+    PWM_Mode_Config(999, 0);
 }
 

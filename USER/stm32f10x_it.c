@@ -147,6 +147,27 @@ void TIM4_IRQHandler(void)
     TIM_ClearFlag(TIM4, TIM_FLAG_Update);
 }
 
+extern void led_toggle(void);
+extern uint32_t speed;
+void TIM1_UP_IRQHandler(void)   //TIM1ÖÐ¶Ï
+{
+    static uint32_t count = 0;
+    if (TIM_GetITStatus(TIM1, TIM_IT_Update) != RESET) 
+    {
+        TIM_ClearITPendingBit(TIM1,TIM_IT_Update);
+        count++;
+        if(count %5 == 0)
+        {
+            speed = TIM4->CNT;
+            TIM4->CNT = 0;
+        }
+        if(count >= 1000)
+        {
+			count = 0;
+            led_toggle();
+        }
+    }
+}
 
 
 

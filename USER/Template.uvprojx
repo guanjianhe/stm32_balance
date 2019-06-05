@@ -365,7 +365,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F10X_MD,USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\USER;..\CORE;..\STM32F10x_StdPeriph_Driver\inc;..\BSP\led;..\BSP\motor;..\BSP\encode;..\BSP\uart</IncludePath>
+              <IncludePath>..\USER;..\CORE;..\STM32F10x_StdPeriph_Driver\inc;..\BSP\led;..\BSP\motor;..\BSP\encode;..\BSP\uart;..\BSP\timer</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -582,6 +582,11 @@
               <FileName>uart.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\BSP\uart\uart.c</FilePath>
+            </File>
+            <File>
+              <FileName>timer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\BSP\timer\timer.c</FilePath>
             </File>
           </Files>
         </Group>
